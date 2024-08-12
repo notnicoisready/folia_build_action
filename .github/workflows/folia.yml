@@ -72,8 +72,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ steps.date.outputs.date }}
-          release_name: ${{ steps.date.outputs.date }}
+          tag_name: ${{ steps.date.outputs.date }}-${{ github.run_id }}
+          release_name: Release ${{ steps.date.outputs.date }} (Build ${{ github.run_id }})
           draft: false
           prerelease: false
       
